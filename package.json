@@ -1,0 +1,22 @@
+{
+  "name": "routing-framework",
+  "version": "1.0.0",
+  "description": "Simple routing framework for HTTP servers in NODE",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonChatelain/routing-framework.git"
+  },
+  "author": "Don Chatelain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DonChatelain/routing-framework/issues"
+  },
+  "homepage": "https://github.com/DonChatelain/routing-framework#readme"
+}
