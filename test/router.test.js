@@ -16,27 +16,36 @@ describe('Framework user', () =>{
   describe('After initial start up', () =>{
 
     it('Creates instance of router object', () =>{
-
       app = new Router();
       methods.forEach((element) =>{
         assert.property(app, element);
       });
     });
 
-    it('Has methods that returns callbacks', (done) =>{
-
-      var count = 0;
+    it('Has all reqMethod properties', () =>{
       methods.forEach((element) =>{
-        app[element]('', () =>{
-          count += 1;
-          if (count === methods.length) done();
-        });
+        if (!app.reqMethods[element]) assert.isOk(false);
       });
     });
 
-    it('Returns 400 status if path is malformed', (done) =>{
-      
+    it('Saves a given route', () =>{
+      app.get('/fake/path');
+      var myGetObject = app.reqMethods.get.find((element) =>{
+        return element.path === '/fake/path';
+      });
+      assert.isOk(myGetObject);
     });
+
+    // Successfully responds to saved route by invoking response object in callback parameters
+    // Can parse information from request object.
+
+
+
+    // ???
+    // Returns 404 status if path is unrecognized (need a client?)
+    // e2e test initiates HTTP requests, gets response
+
+
 
 
 
