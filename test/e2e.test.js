@@ -5,29 +5,31 @@ const chaiHttp = require('chai-http');
 const assert = chai.assert;
 chai.use(chaiHttp);
 
-var app = {};
+// var app = {};
+var httpServerObject;
 
 describe('Framework HTTP end-to-end test', () =>{
 
-  describe('Mounts server', () =>{
+  describe('Mounts a mock app', () =>{
 
-    it('Mounts server and calls listen method', () =>{
-      app = new Router();
+    before('Mock app file', (done) =>{
+      httpServerObject = require('../test-data/mock-app');
+      done();
     });
 
-    it('Spins up client connection', () =>{
-      const request = chai.request(app.listen(5050));
+
+    it('Spins up client connection', (done) =>{
+      const request = chai.request(httpServerObject);
       request
-          .get('/')
-          .end((err,res) => {
-            // var resOrErr = err || res;
-            assert.isOk(false);
-            done();
-          });
+      .get('/dogs')
+      .end((err,res) => {
+        assert.equal(res.text, 'woof!');
+        done();
+      });
+
     });
 
     // Route handler fires when called - responds to 'request' listener
-
 
   });
 
