@@ -30,7 +30,7 @@ describe('Framework module test', () =>{
 
     it('Saves a given route', () =>{
       app.get('/fake/path', function(){
-        console.log(this);
+        console.log('a handler in get fires');
       }
     );
       var myGetObject = app.reqMethods.GET.find((element) =>{
