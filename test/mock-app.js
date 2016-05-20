@@ -1,16 +1,14 @@
 var Router = require('../lib/router');
-var server = require('./http-server');
+const http = require('http');
 
 var app = new Router();
 
 app.get('/', (request, response) => {
-  response.write('index page!');
-  response.end();
+  response.send('This is the index page!');
 });
 
 app.get('/dogs', (request, response) => {
-  response.write('woof!');
-  response.end();
+  response.send('woof!!!');
 });
 
-server.start(app.route(), 8080);
+app.listen([8080]);
