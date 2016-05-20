@@ -9,51 +9,27 @@ var methods = ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'];
 
 describe('Framework module test', () =>{
 
-  before((done) =>{
+  it('Creates instance of router object', () =>{
+    assert.isOk(app = new Router());
+  });
+
+  it('Has all reqMethod properties', () =>{
+    methods.forEach((element) =>{
+      assert.property(app.reqMethods, element);
+    });
+  });
+
+  it('Saves a given route and handler function', (done) =>{
+    app.get('/fake/path', function(){
+      return 'success';
+    });
+
+    var myGetObject = app.reqMethods.GET.find((element) =>{
+      return element.path === '/fake/path';
+    });
+    assert.equal(myGetObject.handler(), 'success');
     done();
   });
 
-  describe('After initial start up', () =>{
 
-    it('Creates instance of router object', () =>{
-      app = new Router();
-      methods.forEach((element) =>{
-        assert.property(app.reqMethods, element);
-      });
-    });
-
-    it('Has all reqMethod properties', () =>{
-      methods.forEach((element) =>{
-        if (!app.reqMethods[element]) assert.isOk(false);
-      });
-    });
-
-    it('Saves a given route', () =>{
-      app.get('/fake/path', function(){
-        console.log('a handler in get fires');
-      }
-    );
-      var myGetObject = app.reqMethods.GET.find((element) =>{
-        return element.path === '/fake/path';
-      });
-      assert.isOk(myGetObject);
-    });
-
-
-
-
-    // Successfully responds to saved route by invoking response object in callback parameters
-    // Can parse information from request object.
-
-
-
-    // ???
-    // Returns 404 status if path is unrecognized (need a client?)
-    // e2e test initiates HTTP requests, gets response
-
-
-
-
-
-  });
 });
