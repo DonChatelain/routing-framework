@@ -1,7 +1,7 @@
 const Router = require('../lib/router');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const http = require('http');
+// const http = require('http');
 const assert = chai.assert;
 chai.use(chaiHttp);
 
@@ -17,10 +17,11 @@ describe('Framework HTTP end-to-end test', () =>{
 
     it('Spins up client connection', () =>{
       const request = chai.request(app.listen(5050));
-      console.log('spins up client fires');
       request
           .get('/')
           .end((err,res) => {
+            // var resOrErr = err || res;
+            assert.isOk(false);
             done();
           });
     });
