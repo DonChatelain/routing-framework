@@ -10,7 +10,7 @@ var httpServerObject;
 
 describe('Framework HTTP end-to-end test', () =>{
 
-  describe('Mounts a mock app', () =>{
+  describe('Mounts a mock application', () =>{
 
     before('Mock app file', (done) =>{
       httpServerObject = require('../test-data/mock-app');
@@ -20,14 +20,12 @@ describe('Framework HTTP end-to-end test', () =>{
     it('Simulates a client \'get\' request to mock app', (done) =>{
       const request = chai.request(httpServerObject);
       request
-      .get('/dogs')
+      .post('/combo')
       .end((err,res) => {
-        assert.equal(res.text, 'woof!!!');
+        assert.equal(res.text, 'first');
         done();
       });
 
     });
-    // Route handler fires when called - responds to 'request' listener
   });
-
 });

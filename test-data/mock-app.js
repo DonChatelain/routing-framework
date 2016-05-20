@@ -10,6 +10,12 @@ app.get('/dogs', (request, response) => {
   response.send('woof!!!');
 });
 
+app.post('/combo', (request, response) =>{
+  response.send('first');
+}, (request, response) =>{
+  response.send('second');
+});
+
 var httpServerObject = app.listen([5050]);
 
 module.exports = httpServerObject;

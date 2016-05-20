@@ -9,34 +9,27 @@ var methods = ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'];
 
 describe('Framework module test', () =>{
 
-  describe('After initial start up', () =>{
-
-    it('Creates instance of router object', () =>{
-      app = new Router();
-      methods.forEach((element) =>{
-        assert.property(app.reqMethods, element);
-      });
-    });
-
-    it('Has all reqMethod properties', () =>{
-      methods.forEach((element) =>{
-        if (!app.reqMethods[element]) assert.isOk(false);
-      });
-    });
-
-    it('Saves a given route and handler function', (done) =>{
-      app.get('/fake/path', function(){
-        return 'success';
-      });
-
-      var myGetObject = app.reqMethods.GET.find((element) =>{
-        return element.path === '/fake/path';
-      });
-      assert.equal(myGetObject.handler(), 'success');
-      done();
-    });
-
-    // Can parse information from request object.
-
+  it('Creates instance of router object', () =>{
+    assert.isOk(app = new Router());
   });
+
+  it('Has all reqMethod properties', () =>{
+    methods.forEach((element) =>{
+      assert.property(app.reqMethods, element);
+    });
+  });
+
+  it('Saves a given route and handler function', (done) =>{
+    app.get('/fake/path', function(){
+      return 'success';
+    });
+
+    var myGetObject = app.reqMethods.GET.find((element) =>{
+      return element.path === '/fake/path';
+    });
+    assert.equal(myGetObject.handler(), 'success');
+    done();
+  });
+
+
 });
