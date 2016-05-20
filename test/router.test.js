@@ -9,10 +9,6 @@ var methods = ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'];
 
 describe('Framework module test', () =>{
 
-  before((done) =>{
-    done();
-  });
-
   describe('After initial start up', () =>{
 
     it('Creates instance of router object', () =>{
@@ -28,32 +24,19 @@ describe('Framework module test', () =>{
       });
     });
 
-    it('Saves a given route', () =>{
+    it('Saves a given route and handler function', (done) =>{
       app.get('/fake/path', function(){
-        console.log('a handler in get fires');
-      }
-    );
+        return 'success';
+      });
+
       var myGetObject = app.reqMethods.GET.find((element) =>{
         return element.path === '/fake/path';
       });
-      assert.isOk(myGetObject);
+      assert.equal(myGetObject.handler(), 'success');
+      done();
     });
 
-
-
-
-    // Successfully responds to saved route by invoking response object in callback parameters
     // Can parse information from request object.
-
-
-
-    // ???
-    // Returns 404 status if path is unrecognized (need a client?)
-    // e2e test initiates HTTP requests, gets response
-
-
-
-
 
   });
 });

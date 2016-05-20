@@ -1,4 +1,4 @@
-const Router = require('../lib/router');
+// const Router = require('../lib/router');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 // const http = require('http');
@@ -17,20 +17,17 @@ describe('Framework HTTP end-to-end test', () =>{
       done();
     });
 
-
-    it('Spins up client connection', (done) =>{
+    it('Simulates a client \'get\' request to mock app', (done) =>{
       const request = chai.request(httpServerObject);
       request
       .get('/dogs')
       .end((err,res) => {
-        assert.equal(res.text, 'woof!');
+        assert.equal(res.text, 'woof!!!');
         done();
       });
 
     });
-
     // Route handler fires when called - responds to 'request' listener
-
   });
 
 });
