@@ -1,11 +1,11 @@
-const Router = require('../router');
+const Router = require('../lib/router');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const assert = chai.assert;
 chai.use(chaiHttp);
 
 var app = {};
-var methods = ['get', 'post', 'delete', 'patch', 'put'];
+var methods = ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'];
 
 describe('Framework module test', () =>{
 
@@ -18,7 +18,7 @@ describe('Framework module test', () =>{
     it('Creates instance of router object', () =>{
       app = new Router();
       methods.forEach((element) =>{
-        assert.property(app, element);
+        assert.property(app.reqMethods, element);
       });
     });
 
@@ -29,8 +29,11 @@ describe('Framework module test', () =>{
     });
 
     it('Saves a given route', () =>{
-      app.get('/fake/path');
-      var myGetObject = app.reqMethods.get.find((element) =>{
+      app.get('/fake/path', function(){
+        console.log(this);
+      }
+    );
+      var myGetObject = app.reqMethods.GET.find((element) =>{
         return element.path === '/fake/path';
       });
       assert.isOk(myGetObject);
