@@ -1,5 +1,6 @@
 # Veloci-Router
-A minimal Express-like router with additional utilities. 
+A minimal Express-style router with additional utilities.
+
 ### Usage:
 To install:  `npm install --save veloci-router`
 ```
@@ -9,7 +10,7 @@ var app = new Router();
 ```
 
 ---
-Contributors: 
+Contributors:
 - Allison Davis
 - Dave Hanagan
 - Don Chatelain

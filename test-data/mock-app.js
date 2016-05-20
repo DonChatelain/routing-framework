@@ -13,4 +13,6 @@ app.get('/dogs', (request, response) => {
   response.end();
 });
 
-server.start(app.route(), 8080);
+var httpServerObject = app.listen(5050);
+
+module.exports = httpServerObject;
