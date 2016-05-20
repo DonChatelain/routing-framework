@@ -1,4 +1,4 @@
-const Router = require('../lib/router');
+const Router = require('../lib/v-router');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const assert = chai.assert;

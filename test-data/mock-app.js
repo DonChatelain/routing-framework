@@ -1,6 +1,4 @@
-var Router = require('../lib/router');
-const http = require('http');
-
+var Router = require('../lib/v-router');
 var app = new Router();
 
 app.get('/', (request, response) => {
@@ -8,10 +6,10 @@ app.get('/', (request, response) => {
 });
 
 app.get('/dogs', (request, response) => {
-  response.send('woof!!!');
+  response.sendFile('./test-data/dogs.json');
 });
 
-var httpServerObject = app.listen(5050);
+var httpServerObject = app.listen([5050]);
 
 module.exports = httpServerObject;
 

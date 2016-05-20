@@ -1,7 +1,6 @@
-const Router = require('../lib/router');
+const Router = require('../lib/v-router');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-// const http = require('http');
 const assert = chai.assert;
 chai.use(chaiHttp);
 
@@ -23,7 +22,7 @@ describe('Framework HTTP end-to-end test', () =>{
       request
       .get('/dogs')
       .end((err,res) => {
-        assert.equal(res.text, 'woof!');
+        assert.equal(res.text, 'woof!!!');
         done();
       });
 
