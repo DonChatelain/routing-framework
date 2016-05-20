@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 var app = {};
 var methods = ['get', 'post', 'delete', 'patch', 'put'];
 
-describe('Framework user', () =>{
+describe('Framework module test', () =>{
 
   before((done) =>{
     done();
@@ -35,6 +35,9 @@ describe('Framework user', () =>{
       });
       assert.isOk(myGetObject);
     });
+
+
+
 
     // Successfully responds to saved route by invoking response object in callback parameters
     // Can parse information from request object.

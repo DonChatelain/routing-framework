@@ -1,4 +1,5 @@
 // const url = require('url');
+const http = require('http');
 
 class Router {
   constructor() {
@@ -42,6 +43,14 @@ class Router {
     // big block that before existed in createServer anonymous function
 
   }
+
+  listen() {
+    var server = http.createServer(this.serverRequestListener);
+    return server.listen.apply(server, arguments);
+  };
+
+  serverRequestListener(request, response){
+  };
 
 }
 
