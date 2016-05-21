@@ -1,13 +1,37 @@
-# Veloci-Router
-A minimal Express-style router with additional utilities.
+[![Build Status](https://travis-ci.org/DonChatelain/routing-framework.svg?branch=master)](https://travis-ci.org/DonChatelain/routing-framework)
 
-### Usage:
-To install:  `npm install --save veloci-router`
+# Veloci-Router
+A minimal Express-style router with response handling convenience methods.
+
+### Features
+* lightweight router
+* Convenience methods .send and .sendFile handle responses in JSON and HTML
+* Includes full testing suite
+
+### Documentation
+#### res.send(res)
 ```
-var Router = require('veloci-router');
+app.get('/', (request, response) => {
+  response.send('This is the index page!');
+});
+```
+#### res.sendFile(res)
+```
+app.get('/dogs', (request, response) => {
+  response.sendFile('./test-data/dogs.json');
+});
+```
+
+### Installation and Usage
+`npm install --save veloci-router`
+
+```
+var Router = require('v-router');
 var app = new Router();
 
 ```
+### Testing
+To start the test suite, install dependencies and then run `npm test`.
 
 ---
 Contributors:
