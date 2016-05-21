@@ -14,10 +14,4 @@ gulp.task('run-tests', () => {
     .pipe(mocha());
 });
 
-// gulp.task('test', ['run-lint', 'run-tests']);
-
-// gulp.task('watch-js', () => {
-//   gulp.watch(['**/*.js', '!node_modules/**'], ['test']);
-// });
-
 gulp.task('default', ['run-tests', 'run-lint']);

@@ -10,6 +10,10 @@ app.get('/dogs', (request, response) => {
   response.sendFile('./test-data/dogs.json');
 });
 
+app.get('/dogs/sadie', (request, response) => {
+  response.send({breed: 'corgi', name: 'Sadie'});
+});
+
 app.post('/combo', (request, response) =>{
   response.send('first');
 }, (request, response) =>{
