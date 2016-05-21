@@ -24,8 +24,11 @@ app.patch('/your/path/resource', (request, response) => {
   // Your handler code here
 });
 
-```
+// Starts the HTTP server and listening to port 8080
+app.listen([8080]); 
 
+```
+---
 ### Convience Methods
 #### response.send(*data*)
 Combines res.write(), res.end(), and res.writeHead() to fit the data type being sent. 
@@ -53,3 +56,7 @@ Contributors:
 - Allison Davis
 - Dave Hanagan
 - Don Chatelain
+
+---
+## License
+MIT
