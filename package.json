@@ -1,6 +1,6 @@
 {
   "name": "veloci-router",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple routing framework for HTTP servers in NODE",
   "main": "lib/v-router.js",
   "directories": {
@@ -17,8 +17,12 @@
   },
   "author": "Don Chatelain",
   "contributors": [
-    {"name": "Allison Davis"},
-    {"name": "Dave Hanagan"}
+    {
+      "name": "Allison Davis"
+    },
+    {
+      "name": "Dave Hanagan"
+    }
   ],
   "keywords": [
     "router",
