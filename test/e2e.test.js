@@ -23,8 +23,8 @@ describe('Framework HTTP end-to-end test', () =>{
         done();
       });
     });
-    
-    it('response.send() sends JSON object with header: application/json', done => {
+
+    it('Response.send() sends JSON object with header: application/json', done => {
       const request = chai.request(httpServerObject);
       request
           .get('/dogs/sadie')
@@ -33,8 +33,8 @@ describe('Framework HTTP end-to-end test', () =>{
             done();
           });
     });
-    
-    it('response.send() sends string with header: text/html', done => {
+
+    it('Response.send() sends string with header: text/html', done => {
       const request = chai.request(httpServerObject);
       request
           .get('/')
@@ -43,8 +43,8 @@ describe('Framework HTTP end-to-end test', () =>{
             done();
           });
     });
-    
-    it('response.sendFile() sends JSON file with proper Header', done => {
+
+    it('Response.sendFile() sends JSON file with proper Header', done => {
       const request = chai.request(httpServerObject);
       const expected = 'corgi';
       request
