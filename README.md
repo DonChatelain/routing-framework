@@ -13,7 +13,7 @@ A minimal Express-style router with response handling convenience methods.
 `npm install --save veloci-router`
 
 ```
-var Router = require('v-router');
+var Router = require('veloci-router');
 var app = new Router();
 
 app.get('/your/path', (request, response) => {
@@ -31,7 +31,7 @@ app.listen([8080]);
 ---
 ### Convience Methods
 #### response.send(*data*)
-Combines res.write(), res.end(), and res.writeHead() to fit the data type being sent. 
+Combines res.write(), res.end(), and res.writeHead() to fit the data type being sent.
 The argument *data* can be a string or a JSON Object.
 ```
 app.get('/', (request, response) => {
