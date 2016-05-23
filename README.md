@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/DonChatelain/veloci-router.svg?branch=master)](https://travis-ci.org/DonChatelain/routing-framework)
+[![Build Status](https://travis-ci.org/DonChatelain/veloci-router.svg?branch=master)](https://travis-ci.org/DonChatelain/veloci-router)
 
 # Veloci-Router
 A minimal Express-style router with response handling convenience methods.
