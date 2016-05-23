@@ -1,8 +1,8 @@
 {
-  "name": "routing-framework",
-  "version": "1.0.0",
+  "name": "veloci-router",
+  "version": "0.1.1",
   "description": "Simple routing framework for HTTP servers in NODE",
-  "main": "app.js",
+  "main": "lib/v-router.js",
   "directories": {
     "test": "tests"
   },
@@ -13,14 +13,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DonChatelain/routing-framework.git"
+    "url": "git+https://github.com/DonChatelain/veloci-router.git"
   },
   "author": "Don Chatelain",
-  "license": "ISC",
+  "contributors": [
+    {
+      "name": "Allison Davis"
+    },
+    {
+      "name": "Dave Hanagan"
+    }
+  ],
+  "keywords": [
+    "router",
+    "routing"
+  ],
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DonChatelain/routing-framework/issues"
+    "url": "https://github.com/DonChatelain/veloci-router/issues"
   },
-  "homepage": "https://github.com/DonChatelain/routing-framework#readme",
+  "homepage": "https://github.com/DonChatelain/veloci-router#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
